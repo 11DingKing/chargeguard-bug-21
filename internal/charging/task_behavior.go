@@ -11,7 +11,7 @@ type BatchSummary struct {
 
 func CloseBatch(ids []string) (*BatchSummary, error) {
 	if len(ids) == 0 {
-		return nil, nil
+		return nil, ErrEmptyClosureBatch
 	}
 	return &BatchSummary{Accepted: len(ids)}, nil
 }
